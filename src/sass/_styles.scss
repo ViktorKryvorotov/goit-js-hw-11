@@ -4,30 +4,31 @@ body {
   line-height: 1.5;
   background-color: #fff;
   color: #2f2f37;
-  max-width: 960px;
   padding: 16px;
 }
 .search{
+  width:100%;
   display: flex;
   justify-content: center;
   margin: 0 auto;
   padding: 10px 20px;
+  background-color: #167b6f;
 }
 .search-form {
   font-family: monospace;
   font-size: 16px;
   font-weight: 700;
-  background-color: #ff6b0a;
   color: #fff;
   padding: 2px 6px;
-  border-radius: 2px;
+ 
+}
+button{
+    
+    background-color: #2525ca;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    min-height: 30px;
+     
 }
 
-.example .background {
-  height: 240px;
-  // ❗️❗️❗️ The path to images from a SASS file
-  // is always the same as from the css folder.
-  background-image: url('../images/logo.png');
-  background-size: cover;
-  background-position: center;
-}
