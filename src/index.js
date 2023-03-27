@@ -2,12 +2,12 @@ import axios from "axios";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import SimpleLightbox from "simplelightbox";
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import fetchPhotos from "./fetchPhotos";
+import { fetchImages }  from "./fetchImages";
 // import renderGalleryMarkup from "./addMarkup";
 
 
-const inputRef = document.querySelector('#search-form');
-const submitRef = document.querySelector('.btn-search');
+const searchForm = document.querySelector('#search-form');
+// const submitRef = document.querySelector('.btn-search');
 const galleryRef=document.querySelector('.gallery');
 const loadMoreBtn = document.querySelector('.load-more');
 
@@ -17,16 +17,22 @@ const hideLoadBtn = () => (loadMoreBtn.style.display = 'none');
 const showLoadBtn = () => (loadMoreBtn.style.display = 'block');
 hideLoadBtn();
 
+let page = 1;
+const perPage = 40;
 
-inputRef.addEventListener('submit', onSubimitSearch);
+
+searchForm.addEventListener('submit', onSubimitSearch);
 loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
 
 
+
 async function onSubimitSearch(e) {
-    e.preventDefault();
-  const searchQuery = inputRef.elements.searchQuery.value.trim();
+  e.preventDefault();
+  hideLoadBtn();
+
+  let searchQuery = searchForm.elements.searchQuery.value.trim();
   page = 1;
-  
+ galleryRef.innerHTML = '';
   if (searchQuery === "") {
       hideLoadBtn();
     return Notify.failure(
@@ -34,7 +40,7 @@ async function onSubimitSearch(e) {
     );
    }
 try {
-  const galleryPhotos = await fetchPhotos(searchQuery);
+  const galleryPhotos = await fetchImages(searchQuery, page, perPage);
   const totalPages = galleryPhotos.data.totalHits
   if (galleryPhotos.data.hits.length === 0) {
     cleanGallery();
@@ -106,11 +112,12 @@ function addMarkup(photos) {
 
 async function onLoadMoreBtnClick() {
   page += 1;
-  const searchQuery = inputRef.elements.searchQuery.value.trim();
+  
+  let searchQuery = searchForm.elements.searchQuery.value.trim();
   try {
-    const galleryPhotos = await fetchPhotos(searchQuery);
+    const galleryPhotos = await fetchImages(searchQuery, page, perPage);
     const totalPages = galleryPhotos.data.totalHits / perPage;
-    if (totalPages <= page) {
+    if (totalPages < page) {
        hideLoadBtn();
         Notiflix.Notify.failure(
         "We're sorry, but you've reached the end of search results."
