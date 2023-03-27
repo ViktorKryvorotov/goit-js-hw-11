@@ -30,6 +30,12 @@ a {
 
 input {
     border-radius: 4px;
+        width: 305px;
+        height: 35px;
+        padding: 5px 10px 5px 10px;
+        border: 1px solid #999;
+        font-size: 16px;
+        font-family: Tahoma;
 }
 
 .search-form {
@@ -46,7 +52,7 @@ button {
     color: #fff;
     border: none;
     border-radius: 10px;
-    min-height: 30px;
+    height: 35px;
     cursor: pointer;
 
 }
@@ -73,8 +79,7 @@ img {
 .gallery__image {
     width: 350px;
     height: 250px;
-    object-fit: cover;
-    transition: transform var(--animation-duration) var(--timing-function);
+    object-fit: cover;  
 }
 
 .info {
@@ -82,9 +87,9 @@ img {
         justify-content: space-around;
         color: grey;
         border-radius: 4px;
-        border-bottom: 1px dashed gray ;
-        border-left:1px dashed gray ;
-        border-right:1px dashed gray ;
+        border-bottom: 1px solid gray ;
+        border-left:1px solid gray ;
+        border-right:1px solid gray ;
 }
 
 .info-item {
