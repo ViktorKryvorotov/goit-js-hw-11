@@ -67,11 +67,11 @@ img {
         gap: 30px;
         flex-wrap: wrap;
         margin-bottom: 30px;
-        margin-top: 30px;
+        margin-top: 80px;
 }
 
 .gallery__image {
-width: 350px;
+    width: 350px;
     height: 250px;
     object-fit: cover;
     transition: transform var(--animation-duration) var(--timing-function);
