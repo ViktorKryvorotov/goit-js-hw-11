@@ -1,27 +1,3 @@
-// import axios from "axios";
-
-// export default async function fetchPhotos(searchQuery,) {
-    
-//     const baseURL=`https://pixabay.com/api/`
-//     const searchParams = new URLSearchParams({
-//         key: "34599665-397fd73b742fe3f801288186c",
-//         q: searchQuery,
-//         image_type: "photo",
-//         oriental: "horizontal",
-//         per_page: 40,
-//         page: 1,
-//         safesearch: true,
-        
-//     });
-  
-//     try {
-//         const response = await axios.get(`${baseURL}?${searchParams}`);
-//         return response; 
-//     }
-//     catch (error) {
-//         console.error(error);
-//     }
-// }
 
 import axios from 'axios';
 export { fetchImages };
