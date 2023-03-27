@@ -116,7 +116,7 @@ async function onLoadMoreBtnClick() {
   let searchQuery = searchForm.elements.searchQuery.value.trim();
   try {
     const galleryPhotos = await fetchImages(searchQuery, page, perPage);
-    const totalPages = galleryPhotos.data.totalHits / perPage;
+    const totalPages = Math.ceil(galleryPhotos.data.totalHits / perPage);
     if (totalPages < page) {
        hideLoadBtn();
         Notiflix.Notify.failure(

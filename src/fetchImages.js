@@ -8,7 +8,7 @@ const KEY = '25766392-01b12b6ed5ab34bc2910d9c3e';
 const searchParams = new URLSearchParams({   
     image_type: "photo",
     oriental: "horizontal",
-  safesearch: true,
+    safesearch: true,
     
 })
 
