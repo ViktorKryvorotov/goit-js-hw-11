@@ -75,7 +75,7 @@ function addMarkup(photos) {
         downloads,
       }) => {
           return `<div class="photo-card">
-      <a href="${largeImageURL}">
+      <a class="img-link" href="${largeImageURL}">
               <img
               class="gallery__image "
               src="${webformatURL}"
@@ -117,9 +117,9 @@ async function onLoadMoreBtnClick() {
   try {
     const galleryPhotos = await fetchImages(searchQuery, page, perPage);
     const totalPages = Math.ceil(galleryPhotos.data.totalHits / perPage);
-    if (totalPages < page) {
+    if (totalPages <= page) {
        hideLoadBtn();
-        Notiflix.Notify.failure(
+        Notify.failure(
         "We're sorry, but you've reached the end of search results."
       );
     }

@@ -62,13 +62,21 @@ button {
     display: block;
 }
 img {
-    display: block;
         max-width: 100%;
        
     
 }
+.img-link { 
+    display: block;
+    border-bottom: solid 1px gray;
+    border-left: solid 1px gray;
+    border-right: solid 1px gray;
+    overflow: hidden;
+    transition: all;
+}
+
 .gallery {
-    display: flex;
+        display: flex;
         justify-content: center;
         gap: 30px;
         flex-wrap: wrap;
@@ -86,10 +94,10 @@ img {
         display: flex;
         justify-content: space-around;
         color: grey;
-        border-radius: 4px;
-        border-bottom: 1px solid gray ;
-        border-left:1px solid gray ;
-        border-right:1px solid gray ;
+        // border-radius: 4px;
+        // border-bottom: 1px solid gray ;
+        // border-left:1px solid gray ;
+        // border-right:1px solid gray ;
 }
 
 .info-item {
