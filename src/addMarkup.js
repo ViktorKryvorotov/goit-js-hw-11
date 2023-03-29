@@ -44,6 +44,6 @@
 //     .join('');
 
 // }
-//  export  function renderGalleryMarkup(photos) {
+//  export default  function renderGalleryMarkup(photos) {
 //   galleryRef.insertAdjacentHTML('beforeend', addMarkup(photos))
 // }

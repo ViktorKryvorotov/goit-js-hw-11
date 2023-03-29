@@ -62,6 +62,8 @@ try {
   }
      ligthbox.refresh();
 }
+
+
 function addMarkup(photos) {
   return photos
     .map(
@@ -106,6 +108,7 @@ function addMarkup(photos) {
     .join('');
 
 }
+
  function renderGalleryMarkup(photos) {
   galleryRef.insertAdjacentHTML('beforeend', addMarkup(photos))
 }
