@@ -13,7 +13,7 @@ const searchParams = new URLSearchParams({
 })
 
 async function fetchImages(query, page, perPage) {
-  const response = await axios.get(
+  const response = await axios(
     `?key=${KEY}&q=${query}&${searchParams}&page=${page}&per_page=${perPage}`,
   );
   return response;

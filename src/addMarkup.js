@@ -2,7 +2,7 @@
 // import 'simplelightbox/dist/simple-lightbox.min.css';
 
 
-// export default function addMarkup(photos) {
+// export  function addMarkup(photos) {
 //   return photos
 //     .map(
 //       ({
@@ -44,6 +44,6 @@
 //     .join('');
 
 // }
-//  export default  function renderGalleryMarkup(photos) {
+//  export   function renderGalleryMarkup(photos) {
 //   galleryRef.insertAdjacentHTML('beforeend', addMarkup(photos))
 // }

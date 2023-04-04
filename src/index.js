@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import SimpleLightbox from "simplelightbox";
 import 'simplelightbox/dist/simple-lightbox.min.css';
@@ -7,7 +7,6 @@ import { fetchImages }  from "./fetchImages";
 
 
 const searchForm = document.querySelector('#search-form');
-// const submitRef = document.querySelector('.btn-search');
 const galleryRef=document.querySelector('.gallery');
 const loadMoreBtn = document.querySelector('.load-more');
 
