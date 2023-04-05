@@ -37,7 +37,7 @@ async function onSubimitSearch(e) {
     return Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
-   }
+  }
 try {
   const galleryPhotos = await fetchImages(searchQuery, page, perPage);
   const totalPages = galleryPhotos.data.totalHits
@@ -52,7 +52,7 @@ try {
     }
   renderGalleryMarkup(galleryPhotos.data.hits);
   ligthbox.refresh();
-  
+  Notify.success(`Hooray! We found ${totalPages} images.`)
 } catch (error) {
     console.log(error);
     Notify.failure(
